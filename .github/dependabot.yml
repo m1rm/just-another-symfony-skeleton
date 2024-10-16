@@ -5,6 +5,10 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    groups:
+      minor-updates:
+        patterns:
+          - "minor"
 
   # Update Docker dependencies
   - package-ecosystem: "docker"
