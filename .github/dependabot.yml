@@ -10,8 +10,14 @@ updates:
         patterns:
           - "minor"
 
-  # Update Docker dependencies
+  # Update Docker nginx dependencies
   - package-ecosystem: "docker"
-    directory: "/"
+    directory: "/docker/nginx"
+    schedule:
+      interval: "weekly"
+
+  # Update Docker php dependencies
+  - package-ecosystem: "docker"
+    directory: "/docker/php"
     schedule:
       interval: "weekly"
