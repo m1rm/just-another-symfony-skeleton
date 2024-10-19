@@ -4,11 +4,16 @@ updates:
   - package-ecosystem: "composer"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "daily"
     groups:
+      patch-updates:
+        patterns:
+          - "patch"
+        auto-merge: true
       minor-updates:
         patterns:
           - "minor"
+        auto-merge: false
 
   # Update Docker nginx dependencies
   - package-ecosystem: "docker"
