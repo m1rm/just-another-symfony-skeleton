@@ -21,7 +21,6 @@ init: start
 
 start:
 	{{COMPOSE}} up -d
-	{{DB-RUN}} mysqladmin -uroot -pChangeMe -hdb --wait=10 ping
 	@echo URL: http://localhost:8080
 
 stop:
