@@ -12,8 +12,8 @@ updates:
       minor-updates:
         patterns:
           - "minor"
-    commit-message: "dependabot"
-    auto-merge: true
+    commit-message:
+      prefix: "dependabot"
 
   # Update Docker nginx dependencies
   - package-ecosystem: "docker"
