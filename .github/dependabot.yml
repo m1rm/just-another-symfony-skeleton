@@ -9,11 +9,12 @@ updates:
       patch-updates:
         patterns:
           - "patch"
-        auto-merge: true
       minor-updates:
         patterns:
           - "minor"
         auto-merge: false
+    commit-message: "dependabot"
+    auto-merge: true
 
   # Update Docker nginx dependencies
   - package-ecosystem: "docker"
