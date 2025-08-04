@@ -50,3 +50,7 @@ The application is containerized using Docker and uses Nginx as the web server a
 *   Ensure that any new code is covered by tests.
 *   Do not commit directly to the main branch. Create a new branch for each feature or bug fix.
 *   Before submitting a pull request, ensure that all tests pass and the code is properly formatted.
+* If you write any code mention yourself within the commit in the format: "Co-developed-by: {Provider} {Model} " Example: "Co-developed-by: Claude claude-4-sonnet"
+* After making any PHP changes run just test-code-quality to make sure the code follows our quality guidelines
+* Only focus on the task given, do not start refactoring stuff on your own
+* Be honest, if I make a mistake tell me
