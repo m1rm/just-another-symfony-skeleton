@@ -32,6 +32,7 @@ class OutputShowcaseCommand extends Command
         $io->section('Output formats:');
         $io->writeln('A simple string: Hello World!');
 
+        $io->newLine();
         $io->writeln('Listings:');
         $this->customListing($items, $io);
 
