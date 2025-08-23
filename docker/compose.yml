@@ -1,15 +1,18 @@
 services:
 
   db:
-    image: mysql:8.3
+    image: mariadb:11.7.2
     healthcheck:
-      test: [ "CMD-SHELL", "mysqladmin -uroot -pChangeMe -hdb ping" ]
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
       interval: 10s
       retries: 5
       start_period: 30s
       timeout: 10s
     environment:
-      MYSQL_ROOT_PASSWORD: "ChangeMe"
+      MARIADB_ROOT_PASSWORD: "ChangeMe"
+      MARIADB_DATABASE: "testdb"
+      MARIADB_USER: "testuser"
+      MARIADB_PASSSWORD: "ChangeMe"
     ports:
       - "3306:3306"
 
