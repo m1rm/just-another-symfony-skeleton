@@ -83,3 +83,27 @@ test-security: (composer "audit")
 [private]
 outdated: (composer "install") (composer "outdated --direct --strict")
 
+[private]
+phpunit *args:
+	{{PHP-RUN}} vendor/bin/phpunit {{args}}
+
+# run phpstan code inspection
+phpstan *args:
+	{{PHP-RUN}} php -dmemory_limit=-1 vendor/bin/phpstan {{args}}
+
+# run phpcs code inspection
+phpcs:
+    {{PHP-RUN}} vendor/bin/phpcs
+
+# fix auto fixable errors found by phpcs
+fix-code-style:
+	{{PHP-RUN}} vendor/bin/phpcbf || true
+
+[private]
+test-php:
+	{{PHP-RUN}} composer validate
+	{{PHP-RUN}} vendor/bin/phpcs
+	{{PHP-RUN}} bin/console lint:container
+	{{PHP-RUN}} bin/console lint:yaml --parse-tags config
+	{{PHP-RUN}} php -dmemory_limit=-1 vendor/bin/phpstan analyse
+	{{PHP-RUN}} vendor/bin/phpunit
