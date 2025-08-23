@@ -75,3 +75,8 @@ composer-outdated: (composer "install") (composer "outdated --direct --strict")
 # direct access to bin/console inside the phpfpm container
 console *args:
 	{{PHP-RUN}} bin/console {{args}}
+
+## commands mainly used in ci
+[private]
+test-security: (composer "audit")
+
