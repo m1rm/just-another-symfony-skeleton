@@ -69,9 +69,6 @@ php *args='-h':
 composer *args:
 	{{PHP-RUN}} composer {{args}}
 
-[private]
-composer-outdated: (composer "install") (composer "outdated --direct --strict")
-
 # direct access to bin/console inside the phpfpm container
 console *args:
 	{{PHP-RUN}} bin/console {{args}}
@@ -81,7 +78,7 @@ console *args:
 test-security: (composer "audit")
 
 [private]
-outdated: (composer "install") (composer "outdated --direct --strict")
+composer-outdated: (composer "install") (composer "outdated --direct --strict")
 
 [private]
 phpunit *args:
