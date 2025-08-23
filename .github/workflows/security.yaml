@@ -1,0 +1,37 @@
+name: security
+
+on:
+  pull_request:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Just
+        uses: extractions/setup-just@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Checkout code
+        uses: actions/checkout@v5
+      - name: Pulling Docker images
+        run: just compose pull
+      - name: Building Docker images
+        run: just compose build
+      - name: Maintain Composer cache
+        uses: actions/cache@v4
+        with:
+          path: .cache/composer
+          key: composer-${{ hashFiles('composer.lock') }}
+          restore-keys: composer-
+      - name: Install dependencies
+        run: just install
+      - name: Check security issues
+        run: just test-security
+#        @see https://github.com/doctrine-extensions/DoctrineExtensions/issues/2941
+        continue-on-error: true
