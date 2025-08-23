@@ -1,0 +1,20 @@
+parameters:
+    level: max
+    symfony:
+        containerXmlPath: '%rootDir%/../../../var/cache/dev/App_KernelDevDebugContainer.xml'
+    doctrine:
+        objectManagerLoader: tests/object-manager.php
+    paths:
+        - bin/
+        - config/
+        - public/
+        - src/
+        - tests/
+    excludePaths:
+        - public/index.php
+        - tests/bootstrap.php
+        - tests/object-manager.php
+    ignoreErrors:
+        -
+            identifier: argument.type
+            path: tests
