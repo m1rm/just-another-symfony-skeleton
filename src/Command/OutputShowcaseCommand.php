@@ -12,7 +12,8 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 #[AsCommand(name: 'app:showcase-output')]
 class OutputShowcaseCommand extends Command
 {
-    protected function configure(): void {
+    protected function configure(): void
+    {
         $this
             ->addArgument(
                 name: 'listitems',
@@ -24,8 +25,7 @@ class OutputShowcaseCommand extends Command
     public function __invoke(
         InputInterface $input,
         SymfonyStyle $io
-    ): int
-    {
+    ): int {
         $items = $input->getArgument('listitems');
 
         $io->title('Output Showcase');
@@ -34,6 +34,7 @@ class OutputShowcaseCommand extends Command
 
         $io->newLine();
         $io->writeln('Listings:');
+        //@phpstan-ignore-next-line argument.type
         $this->customListing($items, $io);
 
         $io->writeln('Tables:');
@@ -69,8 +70,8 @@ class OutputShowcaseCommand extends Command
     /**
      * @param array<string> $items
      */
-    private function customListing(array $items, SymfonyStyle $io): void {
+    private function customListing(array $items, SymfonyStyle $io): void
+    {
         $io->listing($items);
     }
-
 }

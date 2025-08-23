@@ -25,5 +25,4 @@ class OutputShowcaseCommandTest extends KernelTestCase
         $output = $commandTester->getDisplay();
         $this->assertStringContainsString('1 2 3', $output);
     }
-
 }
