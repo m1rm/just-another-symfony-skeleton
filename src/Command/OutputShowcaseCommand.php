@@ -56,16 +56,12 @@ class OutputShowcaseCommand extends Command
             ]
         );
 
-        $io->writeln('Definition List:');
-        $io->definitionList(
-            'This is a title',
-            ['foo1' => 'bar1'],
-            ['foo2' => 'bar2'],
-            ['foo3' => 'bar3'],
-            new TableSeparator(),
-            'This is another title',
-            ['foo4' => 'bar4']
-        );
+        $io->writeln('Visual highlights:');
+        $io->note('This is a note.');
+        $io->caution('This is a caution.');
+        $io->success('This is a success.');
+
+        $io->note('For more, see: https://symfony.com/doc/current/console/style.html');
 
         return Command::SUCCESS;
     }
