@@ -80,3 +80,6 @@ console *args:
 [private]
 test-security: (composer "audit")
 
+[private]
+outdated: (composer "install") (composer "outdated --direct --strict")
+
