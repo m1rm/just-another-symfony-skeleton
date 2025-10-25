@@ -15,6 +15,4 @@ My skeleton project I use for Symfony training
 
 # Features
 - Symfony maker bundle for faster development
-
-# Todo
-- add basic lint & test setup
+- Showcases of Tests
