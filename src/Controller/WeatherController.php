@@ -23,7 +23,7 @@ class WeatherController extends AbstractController
             $weather = $this->weatherService->getWeather();
         } catch (\Exception $exception) {
             $this->logger->error($exception->getMessage());
-            return $this->render('weather/weather.html.twig', [
+            return $this->render('weather/index.html.twig', [
                 'weatherInfo' => null,
                 'weatherGraph' => null,
                 'error' => $exception->getMessage()
@@ -31,7 +31,7 @@ class WeatherController extends AbstractController
         }
 
         // todo: generate graph from graph data -> Symfony UX & Chart.js
-        return $this->render('weather/weather.html.twig', [
+        return $this->render('weather/index.html.twig', [
             'weatherInfo' => $weather,
             'weatherGraph' => null,
             'error' => null,
