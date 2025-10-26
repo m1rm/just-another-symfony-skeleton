@@ -7,6 +7,7 @@
             This data was obtained from <a href="https://open-meteo.com/" target="_blank">Open-Meteo</a>.
         </div>
 
+        {% if weatherInfo %}
         <table class="table">
             <thead>
             <tr>
@@ -27,5 +28,9 @@
             </tr>
             </tbody>
         </table>
+        {% endif %}
+        {% if error %}
+            <div class="alert alert-danger" role="alert">{{ error }}</div>
+        {% endif %}
     </div>
 {% endblock %}
