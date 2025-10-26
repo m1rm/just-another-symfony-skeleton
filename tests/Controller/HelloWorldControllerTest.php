@@ -7,13 +7,13 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 class HelloWorldControllerTest extends WebTestCase
 {
     public function testIndex() {
-        $this->createClient();
-        $response = $this->getClient()->request('GET', '/hello/tester');
-        $this->assertResponseStatusCodeSame(200);
+        // This calls KernelTestCase::bootKernel(), and creates a
+        // "client" that is acting as the browser
+        $client = static::createClient();
+        $client->request('GET', '/hello/tester');
 
-        $greeting = $response->getNode(0)->nodeValue;
-
-        $this->assertSame('Hello tester!', $greeting);
+        $this->assertResponseIsSuccessful();
+        $this->assertSelectorTextContains('h1', 'Hello tester!');
     }
 
 }
