@@ -30,7 +30,7 @@ class WeatherController extends AbstractController
             ]);
         }
 
-        // todo: generate graph from graph data
+        // todo: generate graph from graph data -> Symfony UX & Chart.js
         return $this->render('weather/weather.html.twig', [
             'weatherInfo' => $weather,
             'weatherGraph' => null,
