@@ -1,0 +1,34 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <div class="container">
+        <h1>Welcome to weather!</h1>
+        <div>
+            This data was obtained from <a href="https://open-meteo.com/" target="_blank">Open-Meteo</a>.
+        </div>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Latitude</th>
+                <th scope="col">Longitude</th>
+                <th scope="col">Timezone</th>
+                <th scope="col">Elevation</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>{{ weatherInfo.latitude }}</td>
+                <td>{{ weatherInfo.longitude }}</td>
+                <td>{{ weatherInfo.timezone }}</td>
+                <td>{{ weatherInfo.elevation }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+{% endblock %}
