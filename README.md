@@ -25,4 +25,6 @@ API and processing the response
 - Showcase of external API usage utilizing [Open-Meteo's](https://open-meteo.com/) forecast api (v1)
 
 # Todo
-Symfony UX & Chart.js to display the weather chart data
+- unhappy-path tests for existing code
+- Symfony UX & Chart.js to display the weather chart data
+- useful doctrine entity, migration, fixture & test
