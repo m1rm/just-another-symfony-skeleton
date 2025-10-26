@@ -16,3 +16,4 @@ My skeleton project I use for Symfony training
 # Features
 - Symfony maker bundle for faster development
 - Showcases of Tests
+- Showcase of external API usage utilizing [Open-Meteo's](https://open-meteo.com/) forecast api (v1)
