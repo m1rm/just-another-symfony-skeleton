@@ -28,3 +28,5 @@ API and processing the response
 - unhappy-path tests for existing code
 - Symfony UX & Chart.js to display the weather chart data
 - useful doctrine entity, migration, fixture & test
+
+showcase pipeline
