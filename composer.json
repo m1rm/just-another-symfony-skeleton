@@ -9,7 +9,7 @@
         "ext-http": "*",
         "ext-iconv": "*",
         "doctrine/dbal": "^4",
-        "doctrine/doctrine-bundle": "^2.11",
+        "doctrine/doctrine-bundle": "^3.0",
         "doctrine/doctrine-migrations-bundle": "^3.3",
         "doctrine/orm": "^3.3",
         "nelmio/cors-bundle": "^2.4",
