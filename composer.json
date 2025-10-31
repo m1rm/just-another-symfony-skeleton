@@ -6,8 +6,8 @@
     "require": {
         "php": ">=8.4",
         "ext-ctype": "*",
-        "ext-iconv": "*",
         "ext-http": "*",
+        "ext-iconv": "*",
         "doctrine/dbal": "^4",
         "doctrine/doctrine-bundle": "^2.11",
         "doctrine/doctrine-migrations-bundle": "^3.3",
