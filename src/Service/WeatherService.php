@@ -16,8 +16,8 @@ readonly class WeatherService
     public function __construct(
         private HttpClientInterface $httpClient,
         private SerializerInterface $serializer
-    )
-    {}
+    ) {
+    }
 
     /**
      * @return WeatherDto
@@ -29,7 +29,10 @@ readonly class WeatherService
      */
     public function getWeather(): WeatherDto
     {
-        $response = $this->httpClient->request('GET', 'https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m');
+        $response = $this->httpClient->request(
+            'GET',
+            'https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m'
+        );
         return $this->serializer->deserialize($response->getContent(), WeatherDto::class, 'json');
     }
 }
