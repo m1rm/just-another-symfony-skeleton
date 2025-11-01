@@ -9,7 +9,7 @@
         "ext-http": "*",
         "ext-iconv": "*",
         "doctrine/dbal": "^4",
-        "doctrine/doctrine-bundle": "^2.11",
+        "doctrine/doctrine-bundle": "^3.0",
         "doctrine/doctrine-migrations-bundle": "^3.3",
         "doctrine/orm": "^3.3",
         "nelmio/cors-bundle": "^2.4",
@@ -89,7 +89,8 @@
     "extra": {
         "symfony": {
             "allow-contrib": true,
-            "require": "7.3.*"
+            "require": "7.3.*",
+            "docker": false
         }
     },
     "require-dev": {
@@ -100,7 +101,7 @@
         "phpstan/phpstan-doctrine": "^2.0",
         "phpstan/phpstan-phpunit": "^2.0",
         "phpstan/phpstan-symfony": "^2.0",
-        "phpunit/phpunit": "^12.3",
+        "phpunit/phpunit": "^12.4",
         "squizlabs/php_codesniffer": "^4.0",
         "symfony/browser-kit": "7.3.*",
         "symfony/css-selector": "7.3.*",

@@ -2,6 +2,7 @@
 .idea
 .vs_code
 .DS_STORE
+.editorconfig
 
 ###> symfony/framework-bundle ###
 /.env.local
@@ -16,6 +17,8 @@
 ###> phpunit/phpunit ###
 /phpunit.xml
 .phpunit.result.cache
+/.phpunit.cache/
+###< phpunit/phpunit ###
 
 ###> phpstan/phpstan ###
 phpstan.neon
