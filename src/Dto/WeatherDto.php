@@ -11,28 +11,11 @@ class WeatherDto
     public string $timezone;
     public float $elevation;
     /**
-     * @var array {'time': string, 'temperature_2m': string}
+     * @var array<string, string>
      */
-    public array $hourlyUnits;
+    public array $hourly_units;
     /**
-     * @var array {'time' : array {int: string}, 'temperature_2m': array{int: float} }
+     * @var array<string, array<int, mixed>>
      */
     public array $hourly;
-
-    public function __construct(
-        float $latitude,
-        float $longitude,
-        string $timezone,
-        float $elevation,
-        array $hourlyUnits,
-        array $hourly
-    )
-    {
-        $this->latitude = $latitude;
-        $this->longitude = $longitude;
-        $this->timezone = $timezone;
-        $this->elevation = $elevation;
-        $this->hourlyUnits = $hourlyUnits;
-        $this->hourly = $hourly;
-    }
 }

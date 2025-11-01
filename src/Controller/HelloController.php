@@ -8,7 +8,6 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class HelloController extends AbstractController
 {
-
     #[Route('/hello/{name}', name: 'hello', methods: ['GET'])]
     public function index(string $name): Response
     {
@@ -16,5 +15,4 @@ class HelloController extends AbstractController
             'name' => $name,
         ]);
     }
-
 }

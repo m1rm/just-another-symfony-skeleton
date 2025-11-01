@@ -1,6 +1,13 @@
 monolog:
     channels:
         - deprecation # Deprecations are logged in the dedicated "deprecation" channel when it exists
+        - weather
+    handlers:
+        weather:
+            type: stream
+            path: '%kernel.logs_dir%/weather.log'
+            level: debug
+            channels: [ 'weather' ]
 
 when@dev:
     monolog:
@@ -59,3 +66,4 @@ when@prod:
                 type: stream
                 channels: [deprecation]
                 path: php://stderr
+                formatter: monolog.formatter.json
