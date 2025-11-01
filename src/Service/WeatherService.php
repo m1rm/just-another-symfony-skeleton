@@ -28,13 +28,12 @@ readonly class WeatherService
      * @throws UnexpectedValueException
      * @throws BadRequestHttpException
      * @throws ServiceUnavailableHttpException
-     * @throws RedirectionException
      */
     public function getWeather(): WeatherDto
     {
         try {
             $response = $this->httpClient->request('GET', 'https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m');
-            $this->serializer->deserialize($response->getContent(), WeatherDto::class, 'json');
+            return $this->serializer->deserialize($response->getContent(), WeatherDto::class, 'json');
         } catch (TransportExceptionInterface $e) {
             throw new TransportException(
                 'Transport error: ' . $e->getMessage() . ' (code: ' . $e->getCode() . ')');
@@ -43,7 +42,7 @@ readonly class WeatherService
                 'Client error: ' . $e->getMessage() . ' (code: ' . $e->getCode() . ')'
             );
         } catch (RedirectionExceptionInterface $e) {
-            throw new RedirectionException(
+            throw new BadRequestHttpException(
                 'Redirection error: ' . $e->getMessage() . ' (code: ' . $e->getCode() . ')'
             );
         } catch (ServerExceptionInterface|ExceptionInterface $e) {
