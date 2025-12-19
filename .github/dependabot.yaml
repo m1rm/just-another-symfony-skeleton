@@ -10,10 +10,6 @@ updates:
         update-types:
           - "patch"
           - "minor"
-      major:
-        applies-to: version-updates
-        update-types:
-          - "major"
     commit-message:
       prefix: "[dependabot] composer"
 
