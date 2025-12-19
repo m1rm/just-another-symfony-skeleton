@@ -5,10 +5,13 @@ updates:
     schedule:
       interval: "weekly"
     groups:
-      minor-and-patch:
+      patch:
         applies-to: version-updates
         update-types:
           - "patch"
+      minor:
+        applies-to: version-updates
+        update-types:
           - "minor"
     commit-message:
       prefix: "[dependabot] composer"
