@@ -1,9 +1,8 @@
 name: security
 
 on:
-  pull_request:
-    branches:
-      - main
+    schedule:
+        - cron: '0 5 1 * *'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -24,7 +23,7 @@ jobs:
       - name: Building Docker images
         run: just compose build
       - name: Maintain Composer cache
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: .cache/composer
           key: composer-${{ hashFiles('composer.lock') }}
@@ -33,5 +32,3 @@ jobs:
         run: just install
       - name: Check security issues
         run: just test-security
-#        @see https://github.com/doctrine-extensions/DoctrineExtensions/issues/2941
-        continue-on-error: true
