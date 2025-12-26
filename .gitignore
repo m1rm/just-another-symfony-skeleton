@@ -1,6 +1,6 @@
 ###> OS/IDE related ###
 .idea
-.vs_code
+.vscode
 .DS_STORE
 .editorconfig
 
