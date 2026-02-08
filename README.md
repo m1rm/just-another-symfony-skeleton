@@ -1,3 +1,6 @@
+> [!IMPORTANT]
+> The work on this project is continued at: https://codeberg.org/m1rm/just-another-symfony-skeleton
+
 # just-another-symfony-skeleton
 My skeleton project I use for Symfony training
 
