@@ -11,6 +11,7 @@ parameters:
         - src/
         - tests/
     excludePaths:
+        - config/reference.php
         - public/index.php
         - tests/bootstrap.php
         - tests/object-manager.php
