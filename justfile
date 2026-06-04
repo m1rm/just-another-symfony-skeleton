@@ -96,6 +96,10 @@ phpcs:
 fix-code-style:
 	{{PHP-RUN}} vendor/bin/phpcbf || true
 
+# run rector
+rector:
+    {{PHP-RUN}} vendor/bin/rector
+
 [private]
 test-php:
 	{{PHP-RUN}} composer validate
